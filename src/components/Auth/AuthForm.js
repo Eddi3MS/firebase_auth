@@ -35,10 +35,13 @@ const AuthForm = () => {
     //validate data
 
     setIsLoading(true);
-    let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASE_KEY}`;
+//     let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASE_KEY}`;
+    let url = `${process.env.SIGNUP}/${process.env.REACT_APP_FIREBASE_KEY}`
 
     if (isLogin) {
-      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_KEY}`;
+//       url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_KEY}`;
+      
+      let url = `${process.env.SIGNIN}/${process.env.REACT_APP_FIREBASE_KEY}`
     }
 
     fetch(url, {
